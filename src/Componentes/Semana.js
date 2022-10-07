@@ -13,7 +13,7 @@ function Semana(props){
                         return(
                             <div>
                                 <span>{dia}{index}</span>
-                                 <CardTemperatura cidade={'São Paulo, SP'} temperatura={24.5} descricao={'Ensolarado'}></CardTemperatura>
+                                <CardTemperatura cidade={'São Paulo, SP'} temperatura={24.5} descricao={'Ensolarado'}></CardTemperatura>
                             </div>
                         ) 
                 })}

@@ -1,6 +1,16 @@
-import './Topo.css'
+import React, { useState, useEffect } from 'react'
 
-function Topo(props) {
+import './Topo.css'
+import './Dia.js'
+
+function Topo({atualizaDado, atualizaCidade}) {
+    const [entrada, setEntrada] = useState('')
+
+    const teste = () =>{
+        atualizaDado(true)
+        atualizaCidade(entrada)
+        setEntrada('')
+    }
 	return (
             <header>
                     <div>
@@ -10,8 +20,9 @@ function Topo(props) {
                         <input
                             type="text"
                             placeholder="Buscar"
+                            onBlur={(event) => {setEntrada(entrada + event.target.value)}}
                         />
-                        <span>&#x1F50E;&#xFE0E;</span>
+                        <span onClick={teste}>&#x1F50E;&#xFE0E;</span>
                         {/* <img src='/images/search.png' height="40px" alt="Instagram icons created by pictranoosa - Flaticon" /> */}
                     </div>
             </header>
