@@ -3,10 +3,10 @@
 function CardTemperatura(props){
     return(
         <div>
-            <h3>São Paulo, SP</h3>
+            <h3>{props.cidade}</h3>
             {/* <img></img> */}
-            <h1>24,5C</h1>
-            <p>Descrição</p>
+            <h1>{props.temperatura}</h1>
+            <p>{props.descricao}</p>
         </div>
 
     )
