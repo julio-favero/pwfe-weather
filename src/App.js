@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import Dia from './Componentes/Dia';
+import Semana from './Componentes/Semana';
+import Topo from './Componentes/Topo';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Topo></Topo>
+      <Dia></Dia>
+      <Semana></Semana>
     </div>
   );
 }
