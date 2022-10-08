@@ -9,6 +9,7 @@ import Topo from './Componentes/Topo';
 
 function App() {
 
+
   const [status, setStatus] = useState(false)
   const [cidade, setCidade] = useState('')
   const [temperatura, setTemperatura] = useState('')
@@ -17,7 +18,7 @@ function App() {
   useEffect(() => {
     if(status){
       setStatus(false)
-      fetch(`https://viacep.com.br/ws/03454050/json/`)
+      fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=dd2361a9&city_name=${cidade}`)
             .then(response => {
                 if(response.ok){
                     return response.json()
@@ -25,8 +26,10 @@ function App() {
                 throw response
             })
                 .then(data =>{
-                    console.log(data)
-                    alert(data.bairro)
+                    console.log(data.results.city_name)
+                    setTemperatura(data.results.temp)
+                    setCidade(data.results.city_name)
+
                 })
                     .catch( error => {
                         console.log(error)
@@ -40,9 +43,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{cidade}</h1>
       <Topo atualizaDado={setStatus} atualizaCidade={setCidade}></Topo>
-      <Dia></Dia>
+      <Dia cidade={cidade} temp={temperatura}></Dia>
       <Semana></Semana>
     </div>
   );
