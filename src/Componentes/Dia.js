@@ -10,4 +10,4 @@ function Dia(props){
     )
 }
 
-export default Dia
+export default Dia;

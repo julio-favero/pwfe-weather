@@ -1,0 +1,13 @@
+
+.gif{
+    width: 40%;
+    position: absolute;
+    top: 10%;
+    /* width: 100%; */
+    text-align: center;
+    z-index: 10;
+}
+
+.gif img{
+    width: 100%;
+}
