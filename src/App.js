@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     setStatus(false)
     setAtualizado(false)
-    fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=dd2361a9&city_name=${cidade}`)
+    fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=08ac8ad7&city_name=${cidade}`)
           .then(response => {
               if(response.ok){
                   return response.json()
